@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "512938608560",
+    "project_id": "simplecrud-b0985",
+    "storage_bucket": "simplecrud-b0985.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512938608560:android:46f08652f706219589f875",
+        "android_client_info": {
+          "package_name": "com.example.crudtry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg_Eh1pluP-aObuDGNUZ9JnDjZnM2Ue7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
