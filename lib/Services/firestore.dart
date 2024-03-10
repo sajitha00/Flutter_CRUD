@@ -15,6 +15,14 @@ class FirestoreService{
       final notestream = notes.orderBy('timestamp',descending: true).snapshots();
       return notestream;
     }
+    //Update
+    Future<void> updatesNote(String docID,String newNote){
+    return notes.doc(docID).update({
+      'note':newNote,
+      'timestamp':Timestamp.now(),
+    });
+    }
+
   }
 
 

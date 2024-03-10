@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController textcontroller = TextEditingController();
 
   // open a box
-   void openBox(){
+   void openBox({String? docID}){
     showDialog(
       context: context,
       builder: (contex)=> AlertDialog(
@@ -22,8 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
         actions: [
           ElevatedButton(onPressed: (){
-            //add a new note
-            firestoreService.addNote(textcontroller.text);
+            if(docID==null){
+              firestoreService.addNote(textcontroller.text);
+            }
+            else
+              {
+                firestoreService.updatesNote(docID,textcontroller.text);
+              }
             //clear the text
             textcontroller.clear();
             //close the box
@@ -62,6 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
                    //display as list title
                    return ListTile(
                      title: Text(noteText),
+                     trailing: IconButton(
+                       onPressed: () =>openBox(docID: docID),
+                       icon: Icon(Icons.settings),
+                     ),
                    );
                  });
            }
