@@ -67,9 +67,19 @@ class _HomeScreenState extends State<HomeScreen> {
                    //display as list title
                    return ListTile(
                      title: Text(noteText),
-                     trailing: IconButton(
-                       onPressed: () =>openBox(docID: docID),
-                       icon: Icon(Icons.settings),
+                     trailing: Row(
+                       mainAxisSize: MainAxisSize.min,
+                       children: [
+                         IconButton(
+                           onPressed: () =>openBox(docID: docID),
+                           icon: Icon(Icons.settings),
+                         ),
+                         //delete button
+                         IconButton(
+                           onPressed: () =>firestoreService.deleteNote(docID),
+                           icon: Icon(Icons.delete),
+                         ),
+                       ],
                      ),
                    );
                  });
